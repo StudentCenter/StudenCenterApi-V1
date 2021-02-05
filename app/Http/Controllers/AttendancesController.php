@@ -14,7 +14,7 @@ class AttendancesController extends Controller
      */
     public function index()
     {
-        $data = Attendance::all();
+        $data = Attendance::with('siswa','kehadiran')->get();
         return response()->json(['success' => true, 'status' => 200, 'message' => 'All Attendance', 'result' => $data], 200);
     }
 

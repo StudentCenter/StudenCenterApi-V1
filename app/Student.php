@@ -12,4 +12,9 @@ class Student extends Model
     {
         return $this->belongsTo('App\Attendance');
     }
+
+    public function kelas()
+    {
+        return $this->hasMany('App\Kelas', 'id', 'kelas');
+    }
 }

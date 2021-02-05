@@ -14,7 +14,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $data = Student::all();
+        $data = Student::with('kelas')->get();
         return response()->json(['success' => true, 'status' => 200, 'message' => 'All Student', 'result' => $data], 200);
     }
 

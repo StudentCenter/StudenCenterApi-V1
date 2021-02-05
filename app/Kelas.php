@@ -12,4 +12,9 @@ class Kelas extends Model
     {
         return $this->belongsTo('App\Attendance');
     }
+
+    public function siswa()
+    {
+        return $this->belongsTo('App\Student');
+    }
 }
