@@ -21,10 +21,10 @@ class StudentsController extends Controller
     public function cetak_pdf()
     {
         $students = Student::all();
-        
+
         // return $students;
-    	$pdf = PDF::loadview('student.pdftable',['students'=>$students]);
-    	return $pdf->download('laporan.pdf');
+        $pdf = PDF::loadview('student.pdftable', ['students' => $students]);
+        return $pdf->download('laporan.pdf');
     }
 
     public function store(Request $request)
@@ -90,5 +90,4 @@ class StudentsController extends Controller
 
         return response()->json(['success' => true, 'status' => 200, 'message' => 'Student was deleted successfully'], 200);
     }
-
 }
