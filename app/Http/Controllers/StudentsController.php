@@ -54,7 +54,7 @@ class StudentsController extends Controller
 
     public function show($id)
     {
-        $data = Student::where('id', $id)->first();
+        $data = Student::where('id', $id)->with('kelas')->first();
         return response()->json(['success' => true, 'status' => 200, 'message' => 'Student Detail', 'data' => $data], 200);
     }
 
