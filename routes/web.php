@@ -12,8 +12,7 @@
 */
 
 $router->get('/', function () {
-    // return redirect('/docs');
-    echo public_path();
+    return view('index');
 });
 
 // siswa

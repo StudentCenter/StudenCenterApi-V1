@@ -55,7 +55,7 @@ class StudentsController extends Controller
             $destination_path = './upload/foto_siswa/';
             $image = 'U-' . time() . '.' . $file_ext;
             $request->file('foto_siswa')->move($destination_path, $image);
-            $imageuser = 'http://localhost:8000/upload/user/' . $image;
+            $imageuser = 'http://localhost:8000/upload/foto_siswa/' . $image;
         }
         $data->foto_siswa = $imageuser;
         $data->save();
@@ -97,7 +97,7 @@ class StudentsController extends Controller
             $destination_path = './upload/foto_siswa/';
             $image = 'U-' . time() . '.' . $file_ext;
             $request->file('foto_siswa')->move($destination_path, $image);
-            $imageuser = 'http://localhost:8000/upload/user/' . $image;
+            $imageuser = 'http://localhost:8000/upload/foto_siswa/' . $image;
         }
         $data->foto_siswa = $imageuser;
         $data->save();
