@@ -22,11 +22,13 @@ class Students extends Migration
             $table->string("anak_ke");
             $table->string("agama");
             $table->string('alamat');
-            $table->string('no_hp');
+            $table->string('no_hp_siswa');
+            $table->string('no_hp_ayah');
             $table->string('nama_ayah');
             $table->string('pekerjaan_ayah');
             $table->string('no_hp_ibu');
             $table->string('nama_ibu');
+            $table->string('foto_siswa');
             $table->string('pekerjaan_ibu');
             $table->string('no_hp_wali')->nullable();
             $table->string('nama_wali')->nullable();

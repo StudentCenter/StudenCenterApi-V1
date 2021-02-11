@@ -37,7 +37,8 @@ class StudentsController extends Controller
         $data->anak_ke = $request->input('anak_ke');
         $data->agama = $request->input('agama');
         $data->alamat = $request->input('alamat');
-        $data->no_hp = $request->input('no_hp');
+        $data->no_hp_siswa = $request->input('no_hp_siswa');
+        $data->no_hp_ayah = $request->input('no_hp_ayah');
         $data->nama_ayah = $request->input('nama_ayah');
         $data->pekerjaan_ayah = $request->input('pekerjaan_ayah');
         $data->no_hp_ibu = $request->input('no_hp_ibu');
@@ -47,6 +48,16 @@ class StudentsController extends Controller
         $data->nama_wali = $request->input('nama_wali');
         $data->pekerjaan_wali = $request->input('pekerjaan_wali');
         $data->alamat_wali = $request->input('alamat_wali');
+        if ($request->hasFile('foto_siswa')) {
+            $original_filename = $request->file('foto_siswa')->getClientOriginalName();
+            $original_filename_arr = explode('.', $original_filename);
+            $file_ext = end($original_filename_arr);
+            $destination_path = './upload/foto_siswa/';
+            $image = 'U-' . time() . '.' . $file_ext;
+            $request->file('foto_siswa')->move($destination_path, $image);
+            $imageuser = 'http://localhost:8000/upload/user/' . $image;
+        }
+        $data->foto_siswa = $imageuser;
         $data->save();
 
         return response()->json(['success' => true, 'status' => 200, 'message' => 'Student was created successfully'], 200);
@@ -68,7 +79,8 @@ class StudentsController extends Controller
         $data->anak_ke = $request->input('anak_ke');
         $data->agama = $request->input('agama');
         $data->alamat = $request->input('alamat');
-        $data->no_hp = $request->input('no_hp');
+        $data->no_hp_siswa = $request->input('no_hp_siswa');
+        $data->no_hp_ayah = $request->input('no_hp_ayah');
         $data->nama_ayah = $request->input('nama_ayah');
         $data->pekerjaan_ayah = $request->input('pekerjaan_ayah');
         $data->no_hp_ibu = $request->input('no_hp_ibu');
@@ -78,6 +90,16 @@ class StudentsController extends Controller
         $data->nama_wali = $request->input('nama_wali');
         $data->pekerjaan_wali = $request->input('pekerjaan_wali');
         $data->alamat_wali = $request->input('alamat_wali');
+        if ($request->hasFile('foto_siswa')) {
+            $original_filename = $request->file('foto_siswa')->getClientOriginalName();
+            $original_filename_arr = explode('.', $original_filename);
+            $file_ext = end($original_filename_arr);
+            $destination_path = './upload/foto_siswa/';
+            $image = 'U-' . time() . '.' . $file_ext;
+            $request->file('foto_siswa')->move($destination_path, $image);
+            $imageuser = 'http://localhost:8000/upload/user/' . $image;
+        }
+        $data->foto_siswa = $imageuser;
         $data->save();
 
         return response()->json(['success' => true, 'status' => 200, 'message' => 'Student was edited successfully'], 200);

@@ -12,14 +12,15 @@
 */
 
 $router->get('/', function () {
-    return redirect('/docs');
+    // return redirect('/docs');
+    echo public_path();
 });
 
 // siswa
 $router->get('student', 'StudentsController@index');
 $router->post('/student/store', 'StudentsController@store');
 $router->get('/student/get/{id}', 'StudentsController@show');
-$router->put('/student/update/{id}', 'StudentsController@update');
+$router->post('/student/update/{id}', 'StudentsController@update');
 $router->delete('/student/delete/{id}', 'StudentsController@destroy');
 
 // kelas
