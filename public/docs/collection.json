@@ -1,8 +1,8 @@
 {
     "variables": [],
     "info": {
-        "name": "StudentAPI API",
-        "_postman_id": "d6b24d4c-c7e8-4198-8bd9-d8ab616fc190",
+        "name": "Lumen API",
+        "_postman_id": "d0e95f2a-ca5a-4528-97e1-bf126512b8f6",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -104,7 +104,7 @@
                             "path": "student\/update\/:id",
                             "query": []
                         },
-                        "method": "PUT",
+                        "method": "POST",
                         "header": [
                             {
                                 "key": "Content-Type",

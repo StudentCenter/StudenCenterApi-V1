@@ -18,6 +18,12 @@
       </head>
 
   <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
     <div class="tocify-wrapper">
                     <div class="lang-selector">
                                   <a href="#" data-language-name="bash">bash</a>
@@ -70,7 +76,39 @@ fetch(url, {
     "success": true,
     "status": 200,
     "message": "All Student",
-    "result": []
+    "result": [
+        {
+            "id": 1,
+            "nama": "Muhammad Farras Jibran",
+            "kelas": [
+                {
+                    "id": 1,
+                    "kelas": "XII RPL 1",
+                    "created_at": "2021-02-11T03:00:53.000000Z",
+                    "updated_at": "2021-02-11T03:00:53.000000Z"
+                }
+            ],
+            "nisn": "31231231",
+            "ttl": "2003-08-06",
+            "anak_ke": "2",
+            "agama": "Islam",
+            "alamat": "Jln.Hj Abdul Ghani II",
+            "no_hp_siswa": "081213517643",
+            "no_hp_ayah": "081218498025",
+            "nama_ayah": "Untung Sumardi",
+            "pekerjaan_ayah": "PNS",
+            "no_hp_ibu": "-",
+            "nama_ibu": "Yoyoh Sobiroh",
+            "pekerjaan_ibu": "IRT",
+            "foto_siswa": "http:\/\/localhost:8000\/upload\/foto_siswa\/U-1613016955.png",
+            "no_hp_wali": null,
+            "nama_wali": null,
+            "pekerjaan_wali": null,
+            "alamat_wali": null,
+            "created_at": "2021-02-11T02:58:44.000000Z",
+            "updated_at": "2021-02-11T04:15:55.000000Z"
+        }
+    ]
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET student</code></p>
@@ -133,17 +171,47 @@ fetch(url, {
     "success": true,
     "status": 200,
     "message": "Student Detail",
-    "data": null
+    "data": {
+        "id": 1,
+        "nama": "Muhammad Farras Jibran",
+        "kelas": [
+            {
+                "id": 1,
+                "kelas": "XII RPL 1",
+                "created_at": "2021-02-11T03:00:53.000000Z",
+                "updated_at": "2021-02-11T03:00:53.000000Z"
+            }
+        ],
+        "nisn": "31231231",
+        "ttl": "2003-08-06",
+        "anak_ke": "2",
+        "agama": "Islam",
+        "alamat": "Jln.Hj Abdul Ghani II",
+        "no_hp_siswa": "081213517643",
+        "no_hp_ayah": "081218498025",
+        "nama_ayah": "Untung Sumardi",
+        "pekerjaan_ayah": "PNS",
+        "no_hp_ibu": "-",
+        "nama_ibu": "Yoyoh Sobiroh",
+        "pekerjaan_ibu": "IRT",
+        "foto_siswa": "http:\/\/localhost:8000\/upload\/foto_siswa\/U-1613016955.png",
+        "no_hp_wali": null,
+        "nama_wali": null,
+        "pekerjaan_wali": null,
+        "alamat_wali": null,
+        "created_at": "2021-02-11T02:58:44.000000Z",
+        "updated_at": "2021-02-11T04:15:55.000000Z"
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET student/get/{id}</code></p>
 <!-- END_fa128427607b8ea833481e10d6029b50 -->
-<!-- START_004874186e819cb3d7587daa69f433c2 -->
+<!-- START_7d87852a2563b8dce0374ddbeaae1283 -->
 <h2>student/update/{id}</h2>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
-<pre><code class="language-bash">curl -X PUT \
+<pre><code class="language-bash">curl -X POST \
     "http://localhost/student/update/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
@@ -157,14 +225,14 @@ let headers = {
 };
 
 fetch(url, {
-    method: "PUT",
+    method: "POST",
     headers: headers,
 })
     .then(response =&gt; response.json())
     .then(json =&gt; console.log(json));</code></pre>
 <h3>HTTP Request</h3>
-<p><code>PUT student/update/{id}</code></p>
-<!-- END_004874186e819cb3d7587daa69f433c2 -->
+<p><code>POST student/update/{id}</code></p>
+<!-- END_7d87852a2563b8dce0374ddbeaae1283 -->
 <!-- START_0e78356c8fd821ae009a395883f20900 -->
 <h2>student/delete/{id}</h2>
 <blockquote>
@@ -223,7 +291,14 @@ fetch(url, {
     "success": true,
     "status": 200,
     "message": "All Kelas",
-    "result": []
+    "result": [
+        {
+            "id": 1,
+            "kelas": "XII RPL 1",
+            "created_at": "2021-02-11T03:00:53.000000Z",
+            "updated_at": "2021-02-11T03:00:53.000000Z"
+        }
+    ]
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET kelas</code></p>
@@ -286,7 +361,12 @@ fetch(url, {
     "success": true,
     "status": 200,
     "message": "Kelas Detail",
-    "data": null
+    "data": {
+        "id": 1,
+        "kelas": "XII RPL 1",
+        "created_at": "2021-02-11T03:00:53.000000Z",
+        "updated_at": "2021-02-11T03:00:53.000000Z"
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET kelas/get/{id}</code></p>

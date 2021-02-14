@@ -61,7 +61,39 @@ fetch(url, {
     "success": true,
     "status": 200,
     "message": "All Student",
-    "result": []
+    "result": [
+        {
+            "id": 1,
+            "nama": "Muhammad Farras Jibran",
+            "kelas": [
+                {
+                    "id": 1,
+                    "kelas": "XII RPL 1",
+                    "created_at": "2021-02-11T03:00:53.000000Z",
+                    "updated_at": "2021-02-11T03:00:53.000000Z"
+                }
+            ],
+            "nisn": "31231231",
+            "ttl": "2003-08-06",
+            "anak_ke": "2",
+            "agama": "Islam",
+            "alamat": "Jln.Hj Abdul Ghani II",
+            "no_hp_siswa": "081213517643",
+            "no_hp_ayah": "081218498025",
+            "nama_ayah": "Untung Sumardi",
+            "pekerjaan_ayah": "PNS",
+            "no_hp_ibu": "-",
+            "nama_ibu": "Yoyoh Sobiroh",
+            "pekerjaan_ibu": "IRT",
+            "foto_siswa": "http:\/\/localhost:8000\/upload\/foto_siswa\/U-1613016955.png",
+            "no_hp_wali": null,
+            "nama_wali": null,
+            "pekerjaan_wali": null,
+            "alamat_wali": null,
+            "created_at": "2021-02-11T02:58:44.000000Z",
+            "updated_at": "2021-02-11T04:15:55.000000Z"
+        }
+    ]
 }
 ```
 
@@ -145,7 +177,37 @@ fetch(url, {
     "success": true,
     "status": 200,
     "message": "Student Detail",
-    "data": null
+    "data": {
+        "id": 1,
+        "nama": "Muhammad Farras Jibran",
+        "kelas": [
+            {
+                "id": 1,
+                "kelas": "XII RPL 1",
+                "created_at": "2021-02-11T03:00:53.000000Z",
+                "updated_at": "2021-02-11T03:00:53.000000Z"
+            }
+        ],
+        "nisn": "31231231",
+        "ttl": "2003-08-06",
+        "anak_ke": "2",
+        "agama": "Islam",
+        "alamat": "Jln.Hj Abdul Ghani II",
+        "no_hp_siswa": "081213517643",
+        "no_hp_ayah": "081218498025",
+        "nama_ayah": "Untung Sumardi",
+        "pekerjaan_ayah": "PNS",
+        "no_hp_ibu": "-",
+        "nama_ibu": "Yoyoh Sobiroh",
+        "pekerjaan_ibu": "IRT",
+        "foto_siswa": "http:\/\/localhost:8000\/upload\/foto_siswa\/U-1613016955.png",
+        "no_hp_wali": null,
+        "nama_wali": null,
+        "pekerjaan_wali": null,
+        "alamat_wali": null,
+        "created_at": "2021-02-11T02:58:44.000000Z",
+        "updated_at": "2021-02-11T04:15:55.000000Z"
+    }
 }
 ```
 
@@ -155,12 +217,12 @@ fetch(url, {
 
 <!-- END_fa128427607b8ea833481e10d6029b50 -->
 
-<!-- START_004874186e819cb3d7587daa69f433c2 -->
+<!-- START_7d87852a2563b8dce0374ddbeaae1283 -->
 ## student/update/{id}
 > Example request:
 
 ```bash
-curl -X PUT \
+curl -X POST \
     "http://localhost/student/update/1" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -177,7 +239,7 @@ let headers = {
 };
 
 fetch(url, {
-    method: "PUT",
+    method: "POST",
     headers: headers,
 })
     .then(response => response.json())
@@ -187,10 +249,10 @@ fetch(url, {
 
 
 ### HTTP Request
-`PUT student/update/{id}`
+`POST student/update/{id}`
 
 
-<!-- END_004874186e819cb3d7587daa69f433c2 -->
+<!-- END_7d87852a2563b8dce0374ddbeaae1283 -->
 
 <!-- START_0e78356c8fd821ae009a395883f20900 -->
 ## student/delete/{id}
@@ -267,7 +329,14 @@ fetch(url, {
     "success": true,
     "status": 200,
     "message": "All Kelas",
-    "result": []
+    "result": [
+        {
+            "id": 1,
+            "kelas": "XII RPL 1",
+            "created_at": "2021-02-11T03:00:53.000000Z",
+            "updated_at": "2021-02-11T03:00:53.000000Z"
+        }
+    ]
 }
 ```
 
@@ -351,7 +420,12 @@ fetch(url, {
     "success": true,
     "status": 200,
     "message": "Kelas Detail",
-    "data": null
+    "data": {
+        "id": 1,
+        "kelas": "XII RPL 1",
+        "created_at": "2021-02-11T03:00:53.000000Z",
+        "updated_at": "2021-02-11T03:00:53.000000Z"
+    }
 }
 ```
 
