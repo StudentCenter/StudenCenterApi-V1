@@ -51,14 +51,14 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $this->validate($request, [
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required|min:6'
         ]);
 
-        $email = $request->input("email");
+        $username = $request->input("username");
         $password = $request->input("password");
 
-        $user = User::where("email", $email)->first();
+        $user = User::where("username", $username)->first();
 
         if (!$user) {
             $out = [
