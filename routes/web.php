@@ -15,6 +15,11 @@ $router->get('/', function () {
     return redirect('/docs');
 });
 
+// Auth
+$router->post("/register", "AuthController@register");
+$router->post("/login", "AuthController@login");
+$router->get("/logout", "AuthController@logout");
+
 // siswa
 $router->get('student', 'StudentsController@index');
 $router->post('/student/store', 'StudentsController@store');
