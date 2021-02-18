@@ -41,7 +41,7 @@ class AttendancesController extends Controller
 
     public function show($id)
     {
-        $data = Attendance::where('id', $id)->first();
+        $data = Attendance::where('id', $id)->with('siswa','kehadiran')->first();
         return response()->json(['success' => true, 'status' => 200, 'message' => 'Attendance Detail', 'data' => $data], 200);
     }
 
