@@ -18,6 +18,7 @@ class Extracurricular extends Migration
             $table->string("nama_extracurricular");
             $table->string("pelatih");
             $table->string("jadwal");
+            $table->string("jam");
             $table->string("jml_anggota");
             $table->timestamps();
         });

@@ -14,7 +14,7 @@ class KelassesController extends Controller
      */
     public function index()
     {
-        $data = Kelas::all();
+        $data = Kelas::with('siswaData')->get();
         return response()->json(['success' => true, 'status' => 200, 'message' => 'All Kelas', 'result' => $data], 200);
     }
 

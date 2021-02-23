@@ -18,6 +18,7 @@ class Konseling extends Migration
             $table->string("nama_guru");
             $table->string("kelas");
             $table->string("jadwal");
+            $table->string("jam");
             $table->timestamps();
         });
     }

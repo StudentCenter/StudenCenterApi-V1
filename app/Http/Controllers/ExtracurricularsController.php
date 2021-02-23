@@ -25,8 +25,8 @@ class ExtracurricularsController extends Controller
 
     public function show($id)
     {
-        $data =Extracurricular::where('id', $id)->get();
-        return response()->json(['success' => true, 'status' => 200, 'message' => 'Extracurricular Detail', 'data' => $data], 200);
+        $data = Extracurricular::where('id', $id)->get();
+        return response()->json(['success' => true, 'status' => 200, 'message' => 'Extracurricular Detail', 'result' => $data], 200);
     }
     public function store(Request $request)
     {
@@ -34,6 +34,7 @@ class ExtracurricularsController extends Controller
         $data->nama_extracurricular = $request->input('nama_extracurricular');
         $data->pelatih = $request->input('pelatih');
         $data->jadwal = $request->input('jadwal');
+        $data->jadwal = $request->input('jam');
         $data->jml_anggota = $request->input('jml_anggota');
         $data->save();
 
@@ -45,6 +46,7 @@ class ExtracurricularsController extends Controller
         $data->nama_extracurricular = $request->input('nama_extracurricular');
         $data->pelatih = $request->input('pelatih');
         $data->jadwal = $request->input('jadwal');
+        $data->jadwal = $request->input('jam');
         $data->jml_anggota = $request->input('jml_anggota');
         $data->save();
 
