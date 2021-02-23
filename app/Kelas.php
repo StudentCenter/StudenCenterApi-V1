@@ -8,6 +8,10 @@ class Kelas extends Model
 {
     protected $table = 'kelas';
 
+    protected $fillable = [
+        'kelas',
+    ];
+
     public function jurusan()
     {
         return $this->belongsTo('App\Attendance');
@@ -16,5 +20,10 @@ class Kelas extends Model
     public function siswa()
     {
         return $this->belongsTo('App\Student');
+    }
+
+    public function siswaData()
+    {
+        return $this->hasMany('App\Student', 'kelas', 'id');
     }
 }

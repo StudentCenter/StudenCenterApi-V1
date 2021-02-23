@@ -34,6 +34,7 @@ class KonselingController extends Controller
         $data->nama_guru = $request->input('nama_guru');
         $data->kelas = $request->input('kelas');
         $data->jadwal = $request->input('jadwal');
+        $data->jadwal = $request->input('jam');
         $data->save();
 
         return response()->json(['success' => true, 'status' => 200, 'message' => 'Konseling was created successfully'], 200);
@@ -44,6 +45,7 @@ class KonselingController extends Controller
         $data->nama_guru = $request->input('nama_guru');
         $data->kelas = $request->input('kelas');
         $data->jadwal = $request->input('jadwal');
+        $data->jadwal = $request->input('jam');
         $data->save();
 
         return response()->json(['success' => true, 'status' => 200, 'message' => 'Konseling was edited successfully'], 200);

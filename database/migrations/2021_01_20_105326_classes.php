@@ -16,6 +16,7 @@ class Classes extends Migration
         Schema::create('kelas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('kelas');
+            $table->string('siswa')->nullable();
             $table->timestamps();
         });
     }
