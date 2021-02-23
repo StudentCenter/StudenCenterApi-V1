@@ -34,7 +34,7 @@ class ExtracurricularsController extends Controller
         $data->nama_extracurricular = $request->input('nama_extracurricular');
         $data->pelatih = $request->input('pelatih');
         $data->jadwal = $request->input('jadwal');
-        $data->jadwal = $request->input('jam');
+        $data->jam = $request->input('jam');
         $data->jml_anggota = $request->input('jml_anggota');
         $data->save();
 
@@ -46,7 +46,7 @@ class ExtracurricularsController extends Controller
         $data->nama_extracurricular = $request->input('nama_extracurricular');
         $data->pelatih = $request->input('pelatih');
         $data->jadwal = $request->input('jadwal');
-        $data->jadwal = $request->input('jam');
+        $data->jam = $request->input('jam');
         $data->jml_anggota = $request->input('jml_anggota');
         $data->save();
 
