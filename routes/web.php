@@ -33,6 +33,9 @@ $router->post('/kelas/store', 'KelassesController@store');
 $router->get('/kelas/get/{id}', 'KelassesController@show');
 $router->put('/kelas/update/{id}', 'KelassesController@update');
 $router->delete('/kelas/delete/{id}', 'KelassesController@destroy');
+// kelas custom router
+$router->get('kelas/getsiswa/{idkelas}', 'KelassesController@getDataSiswaKelas');
+
 
 // kehadiran
 $router->get('attendance', 'AttendancesController@index');
