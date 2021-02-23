@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Kelas;
+use App\Student;
 use Illuminate\Http\Request;
 
 class KelassesController extends Controller
@@ -57,6 +58,13 @@ class KelassesController extends Controller
         $data->delete();
 
         return response()->json(['success' => true, 'status' => 200, 'message' => 'Kelas was deleted successfully'], 200);
+    }
+
+    // custom function
+    public function getDataSiswaKelas($idkelas)
+    {
+        $data = Student::where('kelas', $idkelas)->with('kelas')->get();
+        return response()->json(['success' => true, 'status' => 200, 'message' => 'All Siswa', 'result' => $data], 200);
     }
 
 }
