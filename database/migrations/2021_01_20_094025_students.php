@@ -17,6 +17,7 @@ class Students extends Migration
             $table->bigIncrements('id');
             $table->string("nama");
             $table->integer("kelas");
+            $table->integer("ekskul");
             $table->string("nisn");
             $table->date("ttl");
             $table->string("anak_ke");

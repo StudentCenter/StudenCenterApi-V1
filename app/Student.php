@@ -10,6 +10,7 @@ class Student extends Model
 
     protected $fillable = [
         'foto_siswa',
+        'ekskul',
         'nama',
         'kelas',
         'nisn',
@@ -39,8 +40,15 @@ class Student extends Model
         return $this->hasMany('App\Kelas', 'id', 'kelas');
     }
 
+    public function excul()
+    {
+        return $this->hasMany('App\Extracurricular', 'id', 'ekskul');
+    }
+
     public function kelasData()
     {
         return $this->belongsTo('App\Kelas');
     }
+
+    
 }

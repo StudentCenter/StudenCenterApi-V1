@@ -14,7 +14,7 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        $data = Student::with('kelas')->get();
+        $data = Student::with('kelas','excul')->get();
         return response()->json(['success' => true, 'status' => 200, 'message' => 'All Student', 'result' => $data], 200);
     }
 
@@ -32,6 +32,7 @@ class StudentsController extends Controller
         $data = new Student();
         $data->nama = $request->input('nama');
         $data->kelas = $request->input('kelas');
+        $data->ekskul = $request->input('ekskul');
         $data->nisn = $request->input('nisn');
         $data->ttl = $request->input('ttl');
         $data->anak_ke = $request->input('anak_ke');
@@ -95,6 +96,7 @@ class StudentsController extends Controller
             'foto_siswa' => $imageapps,
             'nama' => $request->nama,
             'kelas' => $request->kelas,
+            'ekskul' => $request->ekskul,
             'nisn' => $request->nisn,
             'ttl' => $request->ttl,
             'anak_ke' => $request->anak_ke,
